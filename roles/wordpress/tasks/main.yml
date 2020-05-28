@@ -1,0 +1,16 @@
+- name: instalar paquetes previos
+  apt: 
+    pkg: 
+     - unzip
+    state: latest
+
+- name: Descargar wordpress
+  get_url: url=https://wordpress.org/latest.zip dest=/tmp/latest.zip mode=0640
+
+- name: descomprimir wordpress
+  unarchive: src=/tmp/latest.zip dest=/var/www/html copy=no owner=www-data group=www-data mode=0744
+
+- name: copiar wp-config.php
+  template: src=templates/wp-config.j2 dest=/var/www/html/wordpress/wp-config.php owner=www-data group=www-data mode=0744
+  notify: restart apache2
+  

@@ -1,0 +1,9 @@
+- name: Instalando apache2 y php
+  apt: name={{ item }} state=latest
+  with_items:
+    - apache2
+    - php
+    - php-mysql
+  notify:
+    - restart apache2
+  

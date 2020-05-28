@@ -1,0 +1,4 @@
+wordpress_db: wordpress_db
+wordpress_user: manuel_db
+wordpress_pass: wordpressdemanuel2020
+host: 192.168.122.5

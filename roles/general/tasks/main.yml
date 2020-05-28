@@ -1,0 +1,3 @@
+- name: Asegurando si el sistema esta actualizado
+  apt:
+    upgrade: dist
